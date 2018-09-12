@@ -34,10 +34,15 @@ public class Candy extends DessertItem {
     }
 
     public static void main(String[] args) {
-        Candy candy = new Candy("candy", 2.30, .89);
-        System.out.println(candy.getCost() + " cents");
-        Candy candy1 = new Candy();
-        System.out.println(candy1.getWeight());
+        Candy candy0 = new Candy();
+        Candy candy1 = new Candy("Milky Way", 2.25, .89);
+        Candy candy2 = new Candy("Reeces", 1.4, .65);
+        Candy candy3 = new Candy("Airhead", .9, .4);
+        System.out.println("Weight " + candy0.getWeight() + " Price/lb " + candy0.getPriceLb() + " Cost " + candy0.getCost());
+        System.out.println("Weight " + candy1.getWeight() + " Price/lb " + candy1.getPriceLb() + " Cost " + candy1.getCost());
+        System.out.println("Weight " + candy2.getWeight() + " Price/lb " + candy2.getPriceLb() + " Cost " + candy2.getCost());
+        System.out.println("Weight " + candy3.getWeight() + " Price/lb " + candy3.getPriceLb() + " Cost " + candy3.getCost());
+
     }
 
 }
