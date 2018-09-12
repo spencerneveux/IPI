@@ -3,6 +3,10 @@ public class IceCream extends DessertItem {
 
     public IceCream() {}
 
+    public IceCream(String name) {
+        super(name);
+    }
+
     public IceCream(String name, int cost) {
         super(name);
         this.cost = cost;
