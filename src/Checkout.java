@@ -35,7 +35,8 @@ public class Checkout {
 
     public int totalTax()
     {
-        return -1;
+        double taxRate = 0.065;
+        return (int)Math.round(totalCost() * taxRate);
     }
 
     @Override
@@ -50,6 +51,10 @@ public class Checkout {
     public static void main(String[] args) {
         Checkout checkout = new Checkout();
         checkout.enterItem(new Candy("m&m", 2.4, .89));
-        System.out.println(checkout.totalCost() + " cents");
+        checkout.enterItem(new Cookie("Oreo", 7, 412));
+        checkout.enterItem(new IceCream("Chocolate", 134));
+        for(DessertItem item : checkout.dessertList) {
+            System.out.println(item.getName() + " " + item.getCost() + " cents");
+        }
     }
 }
