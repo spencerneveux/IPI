@@ -42,10 +42,11 @@ public class Checkout {
     @Override
     public String toString()
     {
-        String result = "";
-        String header = " M & M Dessert Shoppe\n--------------------";
-
-        return header;
+        StringBuilder sb = new StringBuilder("M & M Dessert Shoppe\n--------------------");
+        for (DessertItem items : dessertList) {
+            sb.append("\n" + items.getName() + "\t" + items.getCost());
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
@@ -53,8 +54,6 @@ public class Checkout {
         checkout.enterItem(new Candy("m&m", 2.4, .89));
         checkout.enterItem(new Cookie("Oreo", 7, 412));
         checkout.enterItem(new IceCream("Chocolate", 134));
-        for(DessertItem item : checkout.dessertList) {
-            System.out.println(item.getName() + " " + item.getCost() + " cents");
-        }
+        System.out.println(checkout);
     }
 }
