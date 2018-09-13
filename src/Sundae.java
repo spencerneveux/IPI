@@ -3,13 +3,21 @@ import java.util.List;
 
 public class Sundae extends IceCream {
     private List<DessertItem> toppings;
+    private int calories;
 
     public Sundae() {
+        calories = 0;
         this.toppings = new ArrayList<>();
     }
 
+
     public Sundae(String iceCreamFlavor, int cost) {
         super(iceCreamFlavor, cost);
+        this.toppings = new ArrayList<>();
+    }
+
+    public Sundae(String iceCreamFlavor, int cost, int calories) {
+        super(iceCreamFlavor, cost, calories);
         this.toppings = new ArrayList<>();
     }
 
@@ -24,6 +32,23 @@ public class Sundae extends IceCream {
         }
         cost += super.getCost();
         return cost;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public int getCalories() {
+        for (DessertItem item : toppings) {
+            if (item instanceof Candy)
+                calories += ((Candy) item).getCalories();
+            else if (item instanceof Cookie)
+                calories += ((Cookie) item).getCalories();
+            else if (item instanceof IceCream)
+                calories += ((IceCream) item).getCalories();
+        }
+
+        return calories;
     }
 
     @Override
