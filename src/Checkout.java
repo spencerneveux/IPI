@@ -2,10 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Checkout {
-    List<DessertItem> dessertList;
+    private List<DessertItem> dessertList;
+    private double taxRate;
 
     public Checkout()
     {
+        dessertList = new ArrayList<>();
+    }
+
+    public Checkout(double taxRate) {
+        this.taxRate = taxRate;
         dessertList = new ArrayList<>();
     }
 
@@ -37,6 +43,14 @@ public class Checkout {
     {
         double taxRate = 0.065;
         return (int)Math.round(totalCost() * taxRate);
+    }
+
+    public double getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(double taxRate) {
+        this.taxRate = taxRate;
     }
 
     @Override
