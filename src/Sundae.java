@@ -1,5 +1,3 @@
-import sun.security.krb5.internal.crypto.Des;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +8,8 @@ public class Sundae extends IceCream {
         this.toppings = new ArrayList<>();
     }
 
-    public Sundae(String iceCreamFlavor) {
-        super(iceCreamFlavor);
+    public Sundae(String iceCreamFlavor, int cost) {
+        super(iceCreamFlavor, cost);
         this.toppings = new ArrayList<>();
     }
 
@@ -39,7 +37,7 @@ public class Sundae extends IceCream {
     }
 
     public static void main(String[] args) {
-        Sundae sundae0 = new Sundae("Chocolate Chip");
+        Sundae sundae0 = new Sundae("Chocolate Chip", 300);
         sundae0.addToppings(new Candy("Hot Fudge", .5, 100));
         sundae0.addToppings(new Candy("m&ms", .4, 98));
         System.out.println(sundae0);

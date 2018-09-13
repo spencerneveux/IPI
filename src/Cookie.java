@@ -1,6 +1,7 @@
 public class Cookie extends DessertItem {
     private int number;
     private int pricePerDozen;
+    private int calories;
 
     public Cookie(){}
 
@@ -11,12 +12,23 @@ public class Cookie extends DessertItem {
         this.pricePerDozen = pricePerDozen;
     }
 
+    public Cookie(String name, int number, int pricePerDozen, int calories) {
+        super(name);
+        this.number = number;
+        this.pricePerDozen = pricePerDozen;
+        this.calories = calories;
+    }
+
     public int getCost() {
         return (int)Math.round(pricePerDozen / 12.0 * number);
     }
 
     public int getNumber() {
         return number;
+    }
+
+    public int getCalories() {
+        return calories;
     }
 
     public void setNumber(int number) {
@@ -33,6 +45,10 @@ public class Cookie extends DessertItem {
 
     public void setName(String name) {
         super.name = name;
+    }
+
+    public void setCalories(int calories){
+        this.calories = calories;
     }
 
     @Override

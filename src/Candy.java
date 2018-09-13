@@ -1,6 +1,7 @@
 public class Candy extends DessertItem {
     private double weight;
     private double priceLb;
+    private int calories;
 
     public Candy() {}
 
@@ -9,6 +10,14 @@ public class Candy extends DessertItem {
         super(name);
         this.weight = weight;
         this.priceLb = priceLb;
+    }
+
+    public Candy(String name, double weight, double priceLb, int calories) {
+        super(name);
+        this.weight = weight;
+        this.priceLb = priceLb;
+        this.calories = calories;
+
     }
 
     public int getCost()
@@ -25,6 +34,10 @@ public class Candy extends DessertItem {
         return priceLb;
     }
 
+    public int getCalories() {
+        return calories;
+    }
+
     public void setWeight(double weight) {
         this.weight = weight;
     }
@@ -35,6 +48,10 @@ public class Candy extends DessertItem {
 
     public void setName(String name) {
         super.name = name;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     @Override

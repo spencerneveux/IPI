@@ -1,5 +1,6 @@
 public class IceCream extends DessertItem {
     private int cost;
+    private int calories;
 
     public IceCream() {}
 
@@ -12,6 +13,12 @@ public class IceCream extends DessertItem {
         this.cost = cost;
     }
 
+    public IceCream(String name, int cost, int calories) {
+        super(name);
+        this.cost = cost;
+        this.calories = calories;
+    }
+
     public void setCost(int cost) {
         if (cost < 0)
             throw new IllegalArgumentException("Not a valid cost. Value must be positive");
@@ -21,6 +28,14 @@ public class IceCream extends DessertItem {
 
     public int getCost() {
         return cost;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     @Override
