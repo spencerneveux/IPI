@@ -58,8 +58,10 @@ public class Checkout {
     {
         StringBuilder sb = new StringBuilder("M & M Dessert Shoppe\n--------------------");
         for (DessertItem items : dessertList) {
-            sb.append("\n" + items.getName() + "\t" + items.getCost());
+            sb.append("\n" + items + " " + String.format("%.2f", items.getCost() / 100.0));
         }
+        sb.append("\nTax " + String.format("%.2f", totalTax() / 100.0) + "\nTotal Cost "
+                + String.format("%.2f", (totalCost() + totalTax()) / 100.0));
         return sb.toString();
     }
 
@@ -68,6 +70,9 @@ public class Checkout {
         checkout.enterItem(new Candy("m&m", 2.4, .89));
         checkout.enterItem(new Cookie("Oreo", 7, 412));
         checkout.enterItem(new IceCream("Chocolate", 134));
+        System.out.println(checkout);
+        System.out.println();
+        checkout.clear();
         System.out.println(checkout);
         System.out.println();
 

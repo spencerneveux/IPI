@@ -8,8 +8,13 @@ public class BakeryTester {
 
 
         System.out.println("Number of items " + checkout.numberOfItems());
+        System.out.println();
         System.out.println("Total Cost: " + checkout.totalCost());
+        System.out.println();
         System.out.println("Total tax: " + checkout.totalTax());
+        System.out.println();
         System.out.println("Cost + Tax " + (checkout.totalTax() + checkout.totalCost()));
+        System.out.println();
+        System.out.println(checkout);
     }
 }
