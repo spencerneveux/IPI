@@ -2,6 +2,7 @@ public class Candy extends DessertItem {
     private double weight;
     private double priceLb;
     private int calories;
+    private int cost;
 
     public Candy() {}
 
@@ -10,6 +11,7 @@ public class Candy extends DessertItem {
         super(name);
         this.weight = weight;
         this.priceLb = priceLb;
+        setCost(weight, priceLb);
     }
 
     public Candy(String name, double weight, double priceLb, int calories) {
@@ -17,12 +19,11 @@ public class Candy extends DessertItem {
         this.weight = weight;
         this.priceLb = priceLb;
         this.calories = calories;
-
+        setCost(weight, priceLb);
     }
 
     public int getCost()
     {
-        int cost = (int)Math.round(weight * priceLb * 100);
         return cost;
     }
 
@@ -54,6 +55,15 @@ public class Candy extends DessertItem {
         this.calories = calories;
     }
 
+    public void setCost(double weight, double priceLb) {
+        if (cost < 0)
+            throw new IllegalArgumentException("Negative cost is not allowed");
+        else if (priceLb < 100)
+            this.cost = (int)Math.round(weight * priceLb * 100);
+        else
+            this.cost = (int)Math.round(weight * priceLb);
+    }
+
     @Override
     public String toString() {
         return (getWeight() + " lbs. @ " + getPriceLb() + " /lb.\n" + getName());
@@ -75,6 +85,9 @@ public class Candy extends DessertItem {
         candy0.setName("Jaw Breaker");
         System.out.println("Candy 0 name should now be Jaw Breaker. Result =  " + candy0.getName());
         System.out.println(candy1);
+        System.out.println(candy1.getCost());
+        System.out.println(candy2.getCost());
+        System.out.println(candy3.getCost());
     }
 
 }

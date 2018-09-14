@@ -2,6 +2,7 @@ public class Cookie extends DessertItem {
     private int number;
     private int pricePerDozen;
     private int calories;
+    private int cost;
 
     public Cookie(){}
 
@@ -10,6 +11,7 @@ public class Cookie extends DessertItem {
         super(name);
         this.number = number;
         this.pricePerDozen = pricePerDozen;
+        setCost(number, pricePerDozen);
     }
 
     public Cookie(String name, int number, int pricePerDozen, int calories) {
@@ -17,10 +19,11 @@ public class Cookie extends DessertItem {
         this.number = number;
         this.pricePerDozen = pricePerDozen;
         this.calories = calories;
+        setCost(number, pricePerDozen);
     }
 
     public int getCost() {
-        return (int)Math.round(pricePerDozen / 12.0 * number);
+        return cost;
     }
 
     public int getNumber() {
@@ -51,6 +54,14 @@ public class Cookie extends DessertItem {
         this.calories = calories;
     }
 
+    public void setCost(int number, int pricePerDozen) {
+        if (number == 12)
+            cost = pricePerDozen;
+        else {
+            cost = (int)Math.round(pricePerDozen / 12.0 * number);
+        }
+    }
+
     @Override
     public String toString() {
         return (getNumber() + " @ " + getPricePerDozen() + " /dz.\n" + getName());
@@ -72,5 +83,10 @@ public class Cookie extends DessertItem {
         cookie2.setPricePerDozen(565);
         System.out.println("Cookie 2 price per dozen is now 565 cents " + cookie2.getPricePerDozen());
         System.out.println(cookie1);
+        System.out.println(cookie1.getCost());
+        System.out.println((int)Math.round(333 / 12.0 * 5));
+        System.out.println(cookie1.getCost());
+        System.out.println(cookie2.getCost());
+        System.out.println(cookie3.getCost());
     }
 }

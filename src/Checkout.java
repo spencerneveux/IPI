@@ -41,8 +41,8 @@ public class Checkout {
 
     public int totalTax()
     {
-        double taxRate = 0.065;
-        return (int)Math.round(totalCost() * taxRate);
+        double tax = taxRate / 100;
+        return (int)Math.round(totalCost() * tax);
     }
 
     public double getTaxRate() {
@@ -69,5 +69,12 @@ public class Checkout {
         checkout.enterItem(new Cookie("Oreo", 7, 412));
         checkout.enterItem(new IceCream("Chocolate", 134));
         System.out.println(checkout);
+        System.out.println();
+
+
+        Checkout checkout1 = new Checkout(6.5);
+        checkout1.enterItem(new Candy("Milky Way", 1, 100));
+        checkout1.enterItem(new Cookie("Peanut Butter", 3, 100));
+        System.out.println(checkout1);
     }
 }
