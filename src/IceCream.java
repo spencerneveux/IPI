@@ -40,7 +40,7 @@ public class IceCream extends DessertItem {
 
     @Override
     public String toString() {
-        return (name + "\t" + getCost());
+        return (name + " Ice Cream");
     }
 
     public static void main(String[] args) {

@@ -6,14 +6,13 @@ public class Sundae extends IceCream {
     private int calories;
 
     public Sundae() {
-        calories = 0;
-        this.toppings = new ArrayList<>();
     }
 
 
-    public Sundae(String iceCreamFlavor, int cost) {
+    public Sundae(DessertItem topping, String iceCreamFlavor, int cost) {
         super(iceCreamFlavor, cost);
         this.toppings = new ArrayList<>();
+        toppings.add(topping);
     }
 
     public Sundae(String iceCreamFlavor, int cost, int calories) {
@@ -57,15 +56,13 @@ public class Sundae extends IceCream {
         for (DessertItem item : toppings) {
             sb.append(item.getName() + " ");
         }
-        sb.append("Sundae with\n" + super.getName() + " Ice Cream");
+        sb.append("Sundae with\n" + super.toString());
         return sb.toString();
     }
 
     public static void main(String[] args) {
-        Sundae sundae0 = new Sundae("Chocolate Chip", 300);
-        sundae0.addToppings(new Candy("Hot Fudge", .5, 100));
-        sundae0.addToppings(new Candy("m&ms", .4, 98));
-        System.out.println(sundae0);
+        Sundae sundae = new Sundae(new Candy("Hot Fudge", .5, .9), "Chocolate Chip", 300);
+        System.out.println(sundae.getCost());
     }
 
 }
