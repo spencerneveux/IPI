@@ -30,16 +30,17 @@ public abstract class DessertItem implements Comparable<Object> {
 
     @Override
     public int compareTo(Object obj) {
+        int value = 0;
         if (obj instanceof DessertItem) {
             DessertItem item = (DessertItem)obj;
-
         if (this.getCost() > item.getCost())
-            return 1;
+            value = 0;
         else if (this.getCost() < item.getCost())
-            return -1;
+            value = -1;
         else
-            return 0;
+            value = 0;
         }
+        return value;
     }
 
     public static DessertItem max(DessertItem item1, DessertItem item2) {
