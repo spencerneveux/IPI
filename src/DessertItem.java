@@ -34,7 +34,7 @@ public abstract class DessertItem implements Comparable<Object> {
         if (obj instanceof DessertItem) {
             DessertItem item = (DessertItem)obj;
         if (this.getCost() > item.getCost())
-            value = 0;
+            value = 1;
         else if (this.getCost() < item.getCost())
             value = -1;
         else
@@ -49,6 +49,5 @@ public abstract class DessertItem implements Comparable<Object> {
         else
             return item2;
     }
-
 
 }
