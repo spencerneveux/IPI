@@ -40,7 +40,8 @@ public class IceCream extends DessertItem {
 
     @Override
     public String toString() {
-        return (name + " Ice Cream");
+        String result = String.format("%-27.24s %5.2f", getName(), getCost() / 100.0);
+        return result;
     }
 
 

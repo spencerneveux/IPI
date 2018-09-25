@@ -66,9 +66,9 @@ public class Candy extends DessertItem {
 
     @Override
     public String toString() {
-        return (getWeight() + " lbs. @ " + getPriceLb() + " /lb.\n" + getName());
+        String result = getWeight() + " lbs. @ " + getPriceLb() + " /lb.\n"
+            + String.format("%-27.24s %5.2f", getName(), getCost() / 100.0);
+        return result;
     }
-
-
 
 }

@@ -56,13 +56,15 @@ public class Checkout {
     @Override
     public String toString()
     {
-        StringBuilder sb = new StringBuilder("\tM & M Dessert Shoppe\n----------------------------");
-        for (DessertItem items : dessertList) {
-            sb.append("\n" + items + " " + String.format("%.2f", items.getCost() / 100.0));
+        String result = "Number of Items " + numberOfItems() + "\n\n"
+                + "Total Cost: " + totalCost() + "\n\nTotal Tax " + totalTax()
+                + "\n\nCost + Tax " + (totalCost() + totalTax()) +
+                "\n\n\tM & M Dessert Shoppe\n----------------------------\n";
+        for (DessertItem item : dessertList) {
+            result += item + "\n";
         }
-        sb.append("\n\nTax " + String.format("%.2f", totalTax() / 100.0) + "\nTotal Cost "
-                + String.format("%.2f", (totalCost() + totalTax()) / 100.0));
-        return sb.toString();
+        result += "\nTax " + totalTax() / 100.0 + "\nTotal Cost " + String.format("%.2f", (totalCost() + totalTax()) / 100.0);
+        return result;
     }
 
 }

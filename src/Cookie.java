@@ -64,6 +64,8 @@ public class Cookie extends DessertItem {
 
     @Override
     public String toString() {
-        return (getNumber() + " @ " + getPricePerDozen() + " /dz.\n" + getName() + " Cookie");
+        String result = getNumber() + " @ " + getPricePerDozen() + " /dz.\n"
+                + String.format("%-27.24s %5.2f", getName(), getCost() / 100.0);
+        return result;
     }
 }
