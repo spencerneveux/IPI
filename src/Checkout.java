@@ -5,31 +5,53 @@ public class Checkout {
     private List<DessertItem> dessertList;
     private double taxRate;
 
+    /**
+     * Null Constuctor for checkout class
+     */
     public Checkout()
     {
         dessertList = new ArrayList<>();
     }
 
+    /**
+     * Overloaded constructor for checkout class
+     * @param taxRate double value taxrate
+     */
     public Checkout(double taxRate) {
         this.taxRate = taxRate;
         dessertList = new ArrayList<>();
     }
 
+    /**
+     * method to clear all items from dessertList
+     */
     public void clear()
     {
         dessertList.clear();
     }
 
+    /**
+     * Method to enter item into checkout
+     * @param item DessertItem objects
+     */
     public void enterItem(DessertItem item)
     {
         dessertList.add(item);
     }
 
+    /**
+     * Method to return num of items in dessertLIst
+     * @return int value num of items
+     */
     public int numberOfItems()
     {
        return dessertList.size();
     }
 
+    /**
+     * Method to get total cost of all items in checkout
+     * @return int value of total cost
+     */
     public int totalCost()
     {
         int cost = 0;
@@ -39,20 +61,36 @@ public class Checkout {
         return cost;
     }
 
+    /**
+     * Method to get total tax on all items in checkout
+     * @return int value of total tax
+     */
     public int totalTax()
     {
         double tax = taxRate / 100;
         return (int)Math.round(totalCost() * tax);
     }
 
+    /**
+     * Getter for tax rate
+     * @return double for tax rate value
+     */
     public double getTaxRate() {
         return taxRate;
     }
 
+    /**
+     * Setter for tax rate
+     * @param taxRate double value for tax rate
+     */
     public void setTaxRate(double taxRate) {
         this.taxRate = taxRate;
     }
 
+    /**
+     * Overriding toString method
+     * @return string representation for receipt
+     */
     @Override
     public String toString()
     {
