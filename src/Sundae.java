@@ -1,3 +1,7 @@
+//Spencer Neveux
+// IPI
+// CECS 277
+// 9/27/18
 import java.util.ArrayList;
 import java.util.List;
 

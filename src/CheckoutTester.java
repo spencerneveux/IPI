@@ -1,3 +1,7 @@
+//Spencer Neveux
+// IPI
+// CECS 277
+// 9/27/18
 public class CheckoutTester {
     public static void main(String[] args) {
         Checkout checkout = new Checkout();

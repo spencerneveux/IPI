@@ -1,3 +1,7 @@
+//Spencer Neveux
+// IPI
+// CECS 277
+// 9/27/18
 public class Cookie extends DessertItem {
     private int number;
     private int pricePerDozen;

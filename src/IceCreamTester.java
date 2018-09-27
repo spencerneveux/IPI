@@ -1,3 +1,7 @@
+//Spencer Neveux
+// IPI
+// CECS 277
+// 9/27/18
 public class IceCreamTester {
     public static void main(String[] args) {
         IceCream iceCream0 = new IceCream();
