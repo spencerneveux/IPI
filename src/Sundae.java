@@ -6,6 +6,8 @@ public class Sundae extends IceCream {
     private int calories;
 
     public Sundae() {
+        super("", 0);
+        toppings = new ArrayList<>();
     }
 
 

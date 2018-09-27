@@ -63,7 +63,7 @@ public class Checkout {
         for (DessertItem item : dessertList) {
             result += item + "\n";
         }
-        result += "\nTax " + totalTax() / 100.0 + "\nTotal Cost " + String.format("%.2f", (totalCost() + totalTax()) / 100.0);
+        result += "\nTax " + String.format("%29.2f", totalTax() / 100.0) + "\nTotal Cost " + String.format("%23.2f", (totalCost() + totalTax()) / 100.0);
         return result;
     }
 

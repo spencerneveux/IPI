@@ -2,7 +2,9 @@ public class IceCream extends DessertItem {
     private int cost;
     private int calories;
 
-    public IceCream() {}
+    public IceCream() {
+        this("", 0, 0);
+    }
 
     public IceCream(String name) {
         super(name);

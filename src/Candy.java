@@ -4,7 +4,9 @@ public class Candy extends DessertItem {
     private int calories;
     private int cost;
 
-    public Candy() {}
+    public Candy() {
+        this("", 0, 0);
+    }
 
     public Candy(String name, double weight, double priceLb)
     {

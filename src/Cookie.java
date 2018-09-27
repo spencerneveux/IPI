@@ -4,7 +4,9 @@ public class Cookie extends DessertItem {
     private int calories;
     private int cost;
 
-    public Cookie(){}
+    public Cookie(){
+        this("", 0, 0);
+    }
 
     public Cookie(String name, int number, int pricePerDozen)
     {
